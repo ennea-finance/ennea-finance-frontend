@@ -18,9 +18,9 @@ const Sidebar = () => {
     { name: "Home", icon: <RxDashboard  />, path: "/admin/dashboard" },
     { name: "Team Management", icon: <FiUsers />, path: "/admin/team" },
     { name: "Services", icon: <FiBriefcase />, path: "/admin/services" },
-    { name: "Feedback", icon: <FiMessageSquare />, path: "/admin/feedback" },
-    { name: "Articles", icon: <FiFileText />, path: "/admin/articles" },
-    { name: "FAQs", icon: <FiHelpCircle />, path: "/admin/faqs" },
+    // { name: "Feedback", icon: <FiMessageSquare />, path: "/admin/feedback" },
+    // { name: "Articles", icon: <FiFileText />, path: "/admin/articles" },
+    // { name: "FAQs", icon: <FiHelpCircle />, path: "/admin/faqs" },
   ];
 
   return (

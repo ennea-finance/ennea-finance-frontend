@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMail, FiLock, FiArrowRight, FiArrowLeft, FiLoader } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo2.png";
 import { toast } from "react-toastify";
 import axios from "axios";
 
@@ -61,9 +61,9 @@ const AdminLogin = () => {
     return (
         <section className="min-h-screen bg-gradient-to-b from-[#F8F7FF] via-white to-[#F8F7FF] flex flex-col">
             {/* 🔹 Top Navbar */}
-            <nav className="flex items-center justify-between px-24 py-8 shadow-sm bg-white/80 backdrop-blur z-20">
+            <nav className="flex items-center justify-between px-24 py-6 shadow-sm bg-white/80 backdrop-blur z-20">
                 <div className="flex flex-col items-center space-x-2">
-                    <img src={logo} alt="logo" className="h-16 w-auto" />
+                    <img src={logo} alt="logo" className="h-20 w-auto" />
                 </div>
 
                 {/* Back to Home */}

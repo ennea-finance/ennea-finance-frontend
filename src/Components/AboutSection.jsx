@@ -51,7 +51,7 @@ const AboutSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-white lg:ml-14 mx-auto py-20 px-6 md:px-16 lg:px-24 overflow-hidden"
+      className="w-full lg:ml-14 mx-auto py-20 px-6 md:px-16 lg:px-24 overflow-hidden"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 max-w-7xl mx-auto items-center">
         {/* 🖼️ Left Side Image */}
@@ -66,7 +66,7 @@ const AboutSection = () => {
             <img
               src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80"
               alt="Financial Consultation"
-              className="rounded-3xl w-full object-cover lg:h-[520px] md:h-[480px] h-[400px]"
+              className="rounded-3xl w-full object-cover lg:h-[500px] md:h-[480px] h-[400px]"
             />
           </div>
         </motion.div>
@@ -83,60 +83,24 @@ const AboutSection = () => {
             About Us
           </button>
 
-          <h2 className="text-3xl md:text-5xl font-semibold mt-5 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-semibold mt-5 leading-tight mb-3">
             Empowering Smarter <br />{" "}
             <span className="pt-10 text-deepblue font-playfair italic">
               Financial Decisions
             </span>
           </h2>
 
-          <p className="text-gray-600 mt-4 text-sm md:text-base leading-relaxed max-w-lg">
-            We combine expertise, technology, and a personalized approach to
-            guide clients toward financial stability and growth. Finorix
-            supports every step of your financial journey.
+          <p className="text-gray-600 font-medium mt-4 text-md md:text-base leading-relaxed max-w-lg">
+            Established in 2024, Ennea Financial Services, our name is inspired by the Greek word 'Ennea,' meaning nine, a number symbolizing completeness, harmony, and spiritual awakening.
+          </p>
+          <p className="text-gray-600 mt-4 text-md md:text-base leading-relaxed max-w-lg">
+            We embody these principles, striving for wholeness in our approach to wealth management. With a deep understanding of the complexities of financial markets, our multifaceted team brings wisdom, integrity, and expertise to help clients achieve their financial goals.We build lasting relationships on trust, delivering tailored investment solutions that align with our clients' goals for wealth creation, financial freedom, and legacy building.
           </p>
 
-          {/* Bullet Points */}
-          <div className="grid grid-cols-2 gap-x-6 gap-y-3 mt-6 max-w-md">
-            {Array(4)
-              .fill("Licensed Financial Consultants")
-              .map((text, idx) => (
-                <div key={idx} className="flex items-center space-x-2">
-                  <FaCircle className="text-deepblue text-[10px]" />
-                  <span className="text-gray-700 text-sm">{text}</span>
-                </div>
-              ))}
-          </div>
-
-          {/* 📊 Stats Box */}
-          <motion.div
-            className="flex flex-col sm:flex-row bg-gradient-to-r from-deepblue to-blue-500 rounded-2xl mt-10 px-8 py-6 max-w-lg"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUpVariant}
-          >
-            <div className="flex flex-col flex-1 items-center justify-center">
-              <h3 className="text-3xl font-bold text-white">{clients}+</h3>
-              <p className="text-sm mt-1 text-white">Happy Clients</p>
-            </div>
-
-            <div className="flex flex-col flex-1 items-center justify-center">
-              <h3 className="text-3xl font-bold text-white">
-                {consultations >= 1000 ? "1K" : consultations}
-              </h3>
-              <p className="text-sm mt-1 text-white">Consultations Done</p>
-            </div>
-
-            <div className="flex flex-col flex-1 items-center justify-center">
-              <h3 className="text-3xl font-bold text-white">{experience}+</h3>
-              <p className="text-sm mt-1 text-white">Years Of Expertise</p>
-            </div>
-          </motion.div>
 
         </motion.div>
       </div>
-    </section>
+    </section >
   );
 };
 

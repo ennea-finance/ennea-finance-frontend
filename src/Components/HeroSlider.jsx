@@ -5,6 +5,8 @@ import { FaPiggyBank, FaStar } from "react-icons/fa";
 import Slider1 from "../images/slider1.jpg";
 import Slider2 from "../images/slider2.jpg";
 import Slider3 from "../images/slider3.jpg";
+import { scroller } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
@@ -30,6 +32,8 @@ const slides = [
 const HeroSlider = () => {
   const [index, setIndex] = useState(0);
 
+  const navigate = useNavigate();
+
   // ⏱️ Auto-slide every 5 seconds
   useEffect(() => {
     const timer = setInterval(() => {
@@ -50,6 +54,20 @@ const HeroSlider = () => {
     exit: { opacity: 0, x: -80, scale: 0.98, transition: { duration: 0.6 } },
   };
 
+  const scrollOrNavigateTo = (targetName) => {
+    const offsetValue = -80; // adjust navbar height
+
+    if (window.location.pathname === "/") {
+      scroller.scrollTo(targetName, {
+        duration: 600,
+        smooth: true,
+        offset: offsetValue,
+      });
+    } else {
+      navigate("/", { state: { scrollTo: targetName } });
+    }
+  };
+
   return (
     <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8F7FF] via-white to-[#F8F7FF] py-24 px-8 md:px-16 lg:px-28 pt-52">
       {/* 💠 Glowing Gradient Accent */}
@@ -68,7 +86,7 @@ const HeroSlider = () => {
           >
             {/* Tag */}
             <button className="border border-deepblue/40 text-gray-800 text-sm font-medium px-6 py-2 rounded-full hover:shadow-[0_0_12px_rgba(21,0,158,0.15)] transition w-fit bg-white/80 backdrop-blur">
-              Welcome to Ennea
+              Welcome to Ennea Financial Services
             </button>
 
             {/* Heading */}
@@ -86,12 +104,12 @@ const HeroSlider = () => {
 
             {/* Buttons */}
             <div className="flex gap-4 mt-6">
-              <button className="flex items-center bg-gradient-to-r from-deepblue to-blue-900 hover:shadow-[0_0_20px_rgba(21,0,158,0.3)] text-white font-medium px-6 py-2 rounded-full text-sm transition-all duration-300">
+              <button onClick={() => scrollOrNavigateTo("contact")} className="flex items-center bg-gradient-to-r from-deepblue to-blue-900 hover:shadow-[0_0_20px_rgba(21,0,158,0.3)] text-white font-medium px-6 py-2 rounded-full text-sm transition-all duration-300">
                 Let’s Connect <FiArrowUpRight className="ml-2" />
               </button>
-              <button className="flex items-center border border-deepblue/40 bg-white/60 backdrop-blur-sm text-deepblue hover:bg-deepblue hover:text-white font-medium px-6 py-2 rounded-full text-sm transition-all duration-300">
+              {/* <button className="flex items-center border border-deepblue/40 bg-white/60 backdrop-blur-sm text-deepblue hover:bg-deepblue hover:text-white font-medium px-6 py-2 rounded-full text-sm transition-all duration-300">
                 Explore Services
-              </button>
+              </button> */}
             </div>
 
             {/* ⭐ Reviews + Trust */}
@@ -156,9 +174,8 @@ const HeroSlider = () => {
         {slides.map((_, i) => (
           <div
             key={i}
-            className={`w-3 h-3 rounded-full transition-all duration-500 ${
-              i === index ? "bg-deepblue scale-110" : "bg-gray-300"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all duration-500 ${i === index ? "bg-deepblue scale-110" : "bg-gray-300"
+              }`}
           ></div>
         ))}
       </div>

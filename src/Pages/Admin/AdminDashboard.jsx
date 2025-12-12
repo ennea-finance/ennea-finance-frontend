@@ -28,27 +28,27 @@ const features = [
     icon: <FiBriefcase className="text-deepblue text-3xl" />,
     url: "/admin/services",
   },
-  {
-    title: "Feedback Management",
-    description:
-      "Edit or reorder client testimonials to showcase your best success stories.",
-    icon: <FiMessageSquare className="text-deepblue text-3xl" />,
-    url: "/admin/feedback",
-  },
-  {
-    title: "Articles & News Management",
-    description:
-      "Post blogs or updates anytime to keep your content fresh and boost SEO.",
-    icon: <FiFileText className="text-deepblue text-3xl" />,
-    url: "/admin/articles",
-  },
-  {
-    title: "FAQ Management",
-    description:
-      "Add or edit FAQs so users always see the most up-to-date answers.",
-    icon: <FiHelpCircle className="text-deepblue text-3xl" />,
-    url: "/admin/faqs",
-  },
+  // {
+  //   title: "Feedback Management",
+  //   description:
+  //     "Edit or reorder client testimonials to showcase your best success stories.",
+  //   icon: <FiMessageSquare className="text-deepblue text-3xl" />,
+  //   url: "/admin/feedback",
+  // },
+  // {
+  //   title: "Articles & News Management",
+  //   description:
+  //     "Post blogs or updates anytime to keep your content fresh and boost SEO.",
+  //   icon: <FiFileText className="text-deepblue text-3xl" />,
+  //   url: "/admin/articles",
+  // },
+  // {
+  //   title: "FAQ Management",
+  //   description:
+  //     "Add or edit FAQs so users always see the most up-to-date answers.",
+  //   icon: <FiHelpCircle className="text-deepblue text-3xl" />,
+  //   url: "/admin/faqs",
+  // },
 ];
 
 const AdminDashboard = () => {

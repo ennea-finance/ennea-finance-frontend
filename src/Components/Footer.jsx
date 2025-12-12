@@ -9,13 +9,16 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"; // ✅ import this
-import logo from "../images/logo.png";
+import logo from "../images/logo2.png";
+import footer_bg from "../images/footer-bg.png";
 
 const Footer = () => {
   const navigate = useNavigate(); // ✅ initialize
 
   return (
-    <footer className="bg-white border-t border-gray-200 pt-12 pb-6 px-6 md:px-16 lg:px-24">
+    <footer className="bg-white border-t border-gray-200 pt-12 pb-6 px-6 md:px-16 lg:px-24"
+   >
+      
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10">
         {/* Logo & Socials */}
         <div>

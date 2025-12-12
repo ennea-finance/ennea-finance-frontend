@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { GoArrowUpRight } from "react-icons/go";
 import logo from "../images/logo.png";
 import logo2 from "../images/logo2.png";
+import { scroller } from "react-scroll";
 
 const Navbar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
@@ -17,6 +18,23 @@ const Navbar = () => {
   const dropdownRef = useRef(null);
 
   const navigate = useNavigate ();
+
+  // ⭐ SCROLL OR NAVIGATE TO HOME THEN SCROLL
+  const scrollOrNavigateTo = (targetName) => {
+    const offsetValue = -80; // adjust navbar height
+
+    if (window.location.pathname === "/") {
+      scroller.scrollTo(targetName, {
+        duration: 600,
+        smooth: true,
+        offset: offsetValue,
+      });
+    } else {
+      navigate("/", { state: { scrollTo: targetName } });
+    }
+
+    setMobileOpen(false);
+  };
 
   // Scroll shadow
   useEffect(() => {
@@ -67,40 +85,74 @@ const Navbar = () => {
 
       {/* ---------- Desktop Navigation ---------- */}
       <ul className="hidden md:flex space-x-9 font-medium">
-        {[
-          { name: "Home", path: "/" },
-          { name: "About", path: "/about" },
-          { name: "Services", path: "/services" },
-          { name: "Team", path: "/team" },
-          { name: "Contact", path: "/contact" },
-          { name: "Disclosure", path: "/disclosure" }
-        ].map((item) => (
-          <li key={item.path}>
-            <NavLink
-              to={item.path}
-              className={({ isActive }) =>
-                `transition duration-200 ${
-                  isActive
-                    ? "text-deepblue font-semibold border-b-2 border-deepblue pb-1"
-                    : "text-gray-700 hover:text-deepblue"
-                }`
-              }
-            >
-              {item.name}
-            </NavLink>
-          </li>
-        ))}
+        {/* Use scroll targets for Home sections */}
+        <li>
+          <button
+            onClick={() => scrollOrNavigateTo("home")}
+            className="transition duration-200 text-deepblue"
+          >
+            Home
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={() => scrollOrNavigateTo("about")}
+            className="transition duration-200 text-gray-700 hover:text-deepblue"
+          >
+            About
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={() => scrollOrNavigateTo("services")}
+            className="transition duration-200 text-gray-700 hover:text-deepblue"
+          >
+            Services
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={() => scrollOrNavigateTo("team")}
+            className="transition duration-200 text-gray-700 hover:text-deepblue"
+          >
+            Team
+          </button>
+        </li>
+
+        <li>
+          <button
+            onClick={() => scrollOrNavigateTo("contact")}
+            className="transition duration-200 text-gray-700 hover:text-deepblue"
+          >
+            Contact
+          </button>
+        </li>
+
+        {/* Non-home pages: use route navigation */}
+        <li>
+          <NavLink
+            to="/disclosure"
+            className={({ isActive }) =>
+              `transition duration-200 ${isActive ? "text-deepblue font-semibold" : "text-gray-700 hover:text-deepblue"}`
+            }
+          >
+            Disclosure
+          </NavLink>
+        </li>
       </ul>
 
       {/* ---------- Desktop Login Dropdown ---------- */}
       <div className="hidden md:block relative" ref={dropdownRef}>
         <div className="flex gap-4">
-            <button
+            {/* <button
           onClick={handleKnowledgeCenterClick}
           className="border border-deepblue px-8 py-2 rounded-full hover:text-deepblue transition"
         >
           Knowledge Center
-        </button>
+        </button> */}
         <button
           onClick={handleLoginClick}
           className="bg-deepblue text-white px-8 py-2 rounded-full hover:bg-deepblue transition"
