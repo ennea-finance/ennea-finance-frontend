@@ -65,7 +65,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="w-full mt-20 py-28 px-6 md:px-16 lg:px-24 overflow-hidden bg-lightblue">
+    <section className="w-full py-28 px-6 md:px-16 lg:px-24 overflow-hidden bg-lightblue">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side: Contact Form */}
         <motion.div

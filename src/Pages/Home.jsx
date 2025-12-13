@@ -14,6 +14,8 @@ import FloatingContactButtons from "../Components/FloatingContactButtons";
 
 // Pattern/background image for white areas
 import pattern from "../images/icons-bg.png"; // <-- add your image here
+import OurPhilosophySection from "../Components/OurPhilosophySection";
+import AppAccessSection from "../Components/AppAccessSection";
 
 const Home = () => {
   const location = useLocation();
@@ -53,7 +55,9 @@ const Home = () => {
           <HeroSlider />
         </Element>
 
-        <CoreValuesSection />
+        <OurPhilosophySection/>
+
+        {/* <CoreValuesSection /> */}
         <Element name="about">
           <AboutSection />
         </Element>
@@ -66,6 +70,7 @@ const Home = () => {
           <TeamSection />
         </Element>
 
+<AppAccessSection/>
         <Element name="contact">
           <ContactSection />
         </Element>

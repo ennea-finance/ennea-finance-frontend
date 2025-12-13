@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaInstagram,
   FaLinkedin,
@@ -7,152 +7,136 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // ✅ import this
+import { useNavigate } from "react-router-dom";
 import logo from "../images/logo2.png";
-import footer_bg from "../images/footer-bg.png";
+import { scroller } from "react-scroll";
 
 const Footer = () => {
-  const navigate = useNavigate(); // ✅ initialize
+  const navigate = useNavigate();
+  const [openServices, setOpenServices] = useState(false);
 
+
+  const scrollOrNavigateTo = (targetName) => {
+    const offsetValue = -80; // adjust navbar height
+
+    if (window.location.pathname === "/") {
+      scroller.scrollTo(targetName, {
+        duration: 600,
+        smooth: true,
+        offset: offsetValue,
+      });
+    } else {
+      navigate("/", { state: { scrollTo: targetName } });
+    }
+
+  };
   return (
-    <footer className="bg-white border-t border-gray-200 pt-12 pb-6 px-6 md:px-16 lg:px-24"
-   >
-      
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-10">
-        {/* Logo & Socials */}
-        <div>
-          <div className="flex items-center gap-2 mb-10">
-            <img src={logo} alt="Ennea Logo" className="w-52 h-24" />
+    <footer className="bg-white border-t border-gray-200 pt-16 pb-6 px-6 md:px-16 lg:px-24">
+
+      {/* ================= MAIN GRID ================= */}
+      <div className="max-w-7xl mx-auto flex justify-between pb-12">
+
+        {/* ================= COL 1 : LOGO + DETAILS ================= */}
+        <div className="min-w-xl flex flex-col">
+          <div>
+            <img src={logo} alt="Logo" className="w-64 h-28 mb-6" />
           </div>
-          <p className="text-xl font-normal mb-4">Follow Us</p>
-          <div className="flex gap-3 text-blue-700">
-            <a
-              href="#"
-              className="text-pink-600 hover:scale-110 transition-transform text-2xl"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="#"
-              className="hover:text-blue-700 hover:scale-110 transition-transform text-2xl"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="#"
-              className="hover:text-blue-700 hover:scale-110 transition-transform text-2xl"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="#"
-              className="hover:text-blue-700 hover:scale-110 transition-transform text-2xl"
-            >
-              <FaTwitter />
-            </a>
+          <div className="text-gray-800 text-lg">
+            <div>
+              <p className="">
+                16 Nanak, 3rd Floor, Manmala Tank Road
+              </p>
+              <p className="">
+                Near Star City Theatre, Mahim, Mumbai
+              </p>
+              <p className="">
+                Maharashtra India 400016
+              </p>
+            </div>
+
+            <div className="mt-6">
+              <p className="flex items-center gap-2">
+                +91 83693 85312
+              </p>
+
+              <p className="flex items-center gap-2">
+                info@askinvestment.com
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 text-lg text-gray-600">
+            <p><strong>ARN:</strong> 79003</p>
+            <p><strong>Registration Date:</strong> 23/03/2015</p>
+            <p><strong>Validity Till:</strong> 22/03/2027</p>
           </div>
         </div>
 
-        {/* Services */}
-        <div className="mt-10">
-          <h4 className="text-deepblue text-xl font-bold mb-4">Services</h4>
-          <ul className="space-y-2 text-gray-600 text-base">
-            <li>
-              <a href="#" className="hover:text-deepblue transition">
-                Portfolio Management
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-deepblue transition">
-                Retirement Planning
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-deepblue transition">
-                Estate Planning
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-deepblue transition"
-                onClick={() => navigate("/disclosure")} // ✅ Navigate to Disclosure
-              >
-                Tax Optimization
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* ================= COL 2 : SERVICES (DROPDOWN) ================= */}
+        <div className="mt-6">
+          <h4 className="text-deepblue text-2xl font-bold mb-4">Services</h4>
 
-        {/* Company */}
-        <div className="mt-10">
-          <h4 className="text-deepblue text-xl font-bold mb-4">Company</h4>
-          <ul className="space-y-2 text-gray-600 text-base">
+          <ul className="space-y-2 text-gray-600 text-lg">
+            <li>Mutual Funds</li>
+            <li>Portfolio Management Services (PMS)</li>
+            <li>Alternative Investment Funds (AIF)</li>
+            <li>Private Equity Fund</li>
+
+            {/* Dropdown */}
             <li>
-              <a href="#" className="hover:text-deepblue transition">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-deepblue transition">
-                Our Team
-              </a>
-            </li>
-            <li>
-              {/* ✅ Proper navigation for Disclosure */}
               <button
-                onClick={() => navigate("/disclosure")}
-                className="hover:text-deepblue transition text-left"
+                onClick={() => setOpenServices(!openServices)}
+                className="flex items-center gap-2 hover:text-deepblue transition font-medium"
               >
-                Disclosure
+                Fixed Income Instruments
+                {openServices ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
               </button>
-            </li>
-            <li>
-              <a href="#" className="hover:text-deepblue transition">
-                News & Insights
-              </a>
+
+              {openServices && (
+                <ul className="ml-1 mt-2 space-y-1 text-lg text-gray-600">
+                  <li>Corporate Bonds</li>
+                  <li>Non-Convertible Debentures</li>
+                  <li>Market Linked Debentures</li>
+                  <li>Corporate FDs</li>
+                </ul>
+              )}
             </li>
           </ul>
         </div>
 
-        {/* Contact */}
-        <div className="mt-10">
-          <h4 className="text-deepblue text-xl font-bold mb-4">Contact</h4>
-          <ul className="space-y-3 text-gray-600 text-base">
-            <li className="flex items-center gap-2">
-              <FaPhoneAlt className="text-deepblue" /> +1 (555) 123-4567
-            </li>
-            <li className="flex items-center gap-2">
-              <FaEnvelope className="text-deepblue" /> info@wealthpro.com
-            </li>
-            <li className="flex items-center gap-2">
-              <FaMapMarkerAlt className="text-deepblue" /> 123 Financial District, NY 10004
-            </li>
+        {/* ================= COL 3 : COMPANY ================= */}
+        <div className="mt-6">
+          <h4 className="text-deepblue text-2xl font-bold mb-4">Company</h4>
+          <ul className="space-y-2 text-gray-600 text-lg">
+            <li onClick={() => scrollOrNavigateTo("home")} className="cursor-pointer hover:text-deepblue">Home</li>
+            <li onClick={() => scrollOrNavigateTo("about")} className="cursor-pointer hover:text-deepblue">About Us</li>
+            <li onClick={() => scrollOrNavigateTo("team")} className="cursor-pointer hover:text-deepblue">Our Team</li>
+            <li onClick={() => navigate("/disclosure")} className="cursor-pointer hover:text-deepblue">Disclosure</li>
+            <li onClick={() => scrollOrNavigateTo("contact")} className="cursor-pointer hover:text-deepblue">Contact Us</li>
           </ul>
+        </div>
+
+        {/* ================= COL 4 : FOLLOW US ================= */}
+        <div className="mt-6">
+          <h4 className="text-deepblue text-2xl font-bold mb-4">Follow Us</h4>
+
+          <div className="flex gap-4 text-3xl text-black mb-6">
+            <FaInstagram className="hover:scale-110 transition cursor-pointer" />
+            <FaLinkedin className="hover:scale-110 transition cursor-pointer" />
+            <FaFacebook className="hover:scale-110 transition cursor-pointer" />
+            <FaTwitter className="hover:scale-110 transition cursor-pointer" />
+          </div>
         </div>
       </div>
 
-      {/* Registration Info */}
-      <div className="text-center text-base text-white py-3 mb-10 bg-deepblue p-0 rounded-2xl">
-        <p>
-          AMFI Registration Number - ARN-76122 | Initial Registration date: 11 September 2009 | Validity of ARN: 06 August 2026
-        </p>
+      {/* ================= BOTTOM BAR ================= */}
+      <div className="border-t border-lightblue pt-6 text-center text-base text-gray-600">
+        © {new Date().getFullYear()} Ennea Financial Services. All rights reserved.
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-lightblue pt-8 text-center text-base text-gray-600">
-        <p>
-          © 2025 Ennea Financial Services. All rights reserved. |
-          <a href="#" className="hover:text-blue-700 mx-1">
-            Privacy Policy
-          </a>
-          |
-          <a href="#" className="hover:text-blue-700 mx-1">
-            Terms of Service
-          </a>
-        </p>
-      </div>
     </footer>
   );
 };

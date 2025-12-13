@@ -84,7 +84,7 @@ const Navbar = () => {
       </div>
 
       {/* ---------- Desktop Navigation ---------- */}
-      <ul className="hidden md:flex space-x-9 font-medium">
+      <ul className="hidden md:flex space-x-9 font-semibold text-lg">
         {/* Use scroll targets for Home sections */}
         <li>
           <button

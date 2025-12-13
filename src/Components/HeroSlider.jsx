@@ -10,19 +10,19 @@ import { useNavigate } from "react-router-dom";
 
 const slides = [
   {
-    title: "Build a Smarter Financial Future With",
+    title: "Build a Smarter Financial Future",
     highlight: "Ennea",
     desc: "At Ennea Financial Services, we help individuals and businesses make confident financial decisions through modern advisory, tailored solutions, and real-time insights.",
     image: Slider1,
   },
   {
-    title: "Your Trusted Partner for Wealth Growth at",
+    title: "Your Trusted Partner for Wealth Growth",
     highlight: "Ennea",
     desc: "Strategize, plan, and grow with expert financial consulting designed to secure your future with confidence and precision.",
     image: Slider2,
   },
   {
-    title: "Empowering Smarter Financial Decisions With",
+    title: "Empowering Smarter Financial Decisions",
     highlight: "Ennea",
     desc: "Our experts combine technology and experience to deliver personalized financial solutions that work for you.",
     image: Slider3,
@@ -85,31 +85,34 @@ const HeroSlider = () => {
             className="flex flex-col justify-center h-full"
           >
             {/* Tag */}
-            <button className="border border-deepblue/40 text-gray-800 text-sm font-medium px-6 py-2 rounded-full hover:shadow-[0_0_12px_rgba(21,0,158,0.15)] transition w-fit bg-white/80 backdrop-blur">
+            <button className="border border-deepblue/40 text-gray-800 text-md font-medium px-6 py-2 rounded-full hover:shadow-[0_0_12px_rgba(21,0,158,0.15)] transition w-fit bg-white/80 backdrop-blur">
               Welcome to Ennea Financial Services
             </button>
+            {/* <button className="text-deepblue font-playfair text-md font-semibold px-6 py-2 rounded-full hover:shadow-[0_0_12px_rgba(21,0,158,0.15)] transition w-fit bg-white/80 backdrop-blur">
+              Welcome to Ennea Financial Services
+            </button> */}
 
             {/* Heading */}
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-6 leading-tight">
+            <h2 className="text-3xl md:text-6xl font-bold text-gray-900 mt-6 leading-tight">
               {slides[index].title}{" "}
-              <span className="text-deepblue font-playfair italic">
+              {/* <span className="text-deepblue font-playfair italic">
                 {slides[index].highlight}
-              </span>
+              </span> */}
             </h2>
 
             {/* Description */}
-            <p className="text-gray-600 mt-5 text-sm md:text-base leading-relaxed max-w-lg">
+            {/* <p className="text-gray-600 mt-5 text-sm md:text-base leading-relaxed max-w-lg">
               {slides[index].desc}
-            </p>
+            </p> */}
 
             {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <button onClick={() => scrollOrNavigateTo("contact")} className="flex items-center bg-gradient-to-r from-deepblue to-blue-900 hover:shadow-[0_0_20px_rgba(21,0,158,0.3)] text-white font-medium px-6 py-2 rounded-full text-sm transition-all duration-300">
+            <div className="flex gap-4 mt-10">
+              <button onClick={() => scrollOrNavigateTo("contact")} className="flex items-center bg-gradient-to-r from-deepblue to-blue-900 hover:shadow-[0_0_20px_rgba(21,0,158,0.3)] text-white font-medium px-6 py-2 rounded-full text-md transition-all duration-300">
                 Let’s Connect <FiArrowUpRight className="ml-2" />
               </button>
-              {/* <button className="flex items-center border border-deepblue/40 bg-white/60 backdrop-blur-sm text-deepblue hover:bg-deepblue hover:text-white font-medium px-6 py-2 rounded-full text-sm transition-all duration-300">
+              <button className="flex items-center border border-deepblue/40 bg-white/60 backdrop-blur-sm text-deepblue hover:bg-deepblue hover:text-white font-medium px-6 py-2 rounded-full text-md transition-all duration-300">
                 Explore Services
-              </button> */}
+              </button>
             </div>
 
             {/* ⭐ Reviews + Trust */}

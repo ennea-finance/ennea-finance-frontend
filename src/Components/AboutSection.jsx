@@ -51,7 +51,7 @@ const AboutSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full lg:ml-14 mx-auto py-20 px-6 md:px-16 lg:px-24 overflow-hidden"
+      className="w-full lg:ml-14 mx-auto py-20 px-6 md:px-16 lg:px-24 overflow-hidden mt-10"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 max-w-7xl mx-auto items-center">
         {/* 🖼️ Left Side Image */}
