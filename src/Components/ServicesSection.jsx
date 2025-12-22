@@ -4,116 +4,174 @@ import {
   FaUserTie,
   FaUniversity,
   FaBalanceScale,
-  FaBriefcase,
-  FaGraduationCap,
+  FaLandmark,
+  FaFileInvoiceDollar,
+  FaChartLine,
+  FaBuilding,
 } from "react-icons/fa";
-import { FiArrowUpRight } from "react-icons/fi";
 import { motion } from "framer-motion";
 
-// Service data
+/* ================= MAIN SERVICES ================= */
+
 const services = [
   {
-    icon: <FaChartPie className="text-deepblue text-4xl mb-3" />,
-    title: "Financial Planning",
+    icon: <FaChartPie className="text-deepblue text-4xl mb-4" />,
+    title: "Mutual Funds",
     description:
-      "Customized investment portfolios tailored to your risk tolerance and financial objectives.",
+      "Mutual funds can be a powerful tool for long-term wealth creation when guided by expertise and discipline. Our investment approach cuts through market noise, focusing on a structured, time-tested philosophy that prioritizes your goals, risk profile, and aspirations. We combine in-depth analysis with careful fund selection, seeking out managers with a proven track record of consistency and conviction. The result is a curated portfolio designed for stability, resilience, and sustainable growth – helping you build wealth with confidence",
   },
   {
-    icon: <FaUserTie className="text-deepblue text-4xl mb-3" />,
-    title: "Investment Advisory",
+    icon: <FaUserTie className="text-deepblue text-4xl mb-4" />,
+    title: "Portfolio Management Services",
     description:
-      "Strategic planning to ensure a comfortable and secure retirement lifestyle.",
+      "We offer exclusive access to top-tier Portfolio Management Services (PMS) through partnerships with seasoned investment managers. These experts employ disciplined, research-driven strategies that have consistently delivered results across market cycles. The PMS approach focuses on bottom-up stock selection, driven by in-depth analysis and prudent diversification. For ambitious investors, we cherry pick select PMS strategies which target emerging opportunities with strong fundamentals and governance. PMS is typically designed for discerning investors seeking concentration in stocks for long term wealth creation. ",
   },
   {
-    icon: <FaUniversity className="text-deepblue text-4xl mb-3" />,
-    title: "Finance Consulting",
+    icon: <FaUniversity className="text-deepblue text-4xl mb-4" />,
+    title: "Alternative Investment Funds",
     description:
-      "Comprehensive estate planning to preserve and transfer wealth efficiently.",
+      "We provide access to select Alternative Investment Funds through exclusive partnerships with reputed fund managers. These strategies seek to enhance portfolio diversification and risk-adjusted returns by capitalising on opportunities across infrastructure, real assets, commodities, and market inefficiencies. Select offerings also follow structured, lower-volatility approaches aimed at delivering returns superior to traditional fixed-income solutions. Our chosen AIF strategies are curated for discerning investors seeking differentiated strategies, stability, and long-term value creation.",
   },
   {
-    icon: <FaBalanceScale className="text-deepblue text-4xl mb-3" />,
-    title: "Tax Strategy",
+    icon: <FaBalanceScale className="text-deepblue text-4xl mb-4" />,
+    title: "Private Equity Funds",
     description:
-      "Strategic tax planning to minimize liabilities and maximize after-tax returns.",
-  },
-  {
-    icon: <FaBriefcase className="text-deepblue text-4xl mb-3" />,
-    title: "Asset Management",
-    description:
-      "Corporate financial planning and employee benefit programs for businesses.",
-  },
-  {
-    icon: <FaGraduationCap className="text-deepblue text-4xl mb-3" />,
-    title: "Debt Management",
-    description:
-      "Strategic savings plans to fund your children's education expenses.",
+      "We offer access to select Private Equity funds through exclusive partnerships with seasoned investment managers. These funds invest across early-stage technology ventures with high growth potential, as well as mature businesses raising growth capital to scale operations and expand market presence. Select investments may also benefit from planned value-unlocking events, including potential public market listings. With active involvement, strategic guidance, and institutional expertise, these Private Equity strategies are curated for investors seeking enhanced long-term returns through ownership in rapidly expanding businesses beyond listed markets.",
   },
 ];
 
-// Animation variants
+/* ================= FIXED INCOME SUB-SERVICES ================= */
+
+const fixedIncome = [
+  {
+    icon: <FaLandmark className="text-deepblue text-3xl" />,
+    title: "Corporate Bonds",
+    description:
+      "High-quality corporate debt instruments offering predictable income with defined maturities and strong credit profiles.",
+  },
+  {
+    icon: <FaFileInvoiceDollar className="text-deepblue text-3xl" />,
+    title: "Non-Convertible Debentures",
+    description:
+      "Fixed or floating return instruments providing higher yields than traditional deposits within a defined risk framework.",
+  },
+  {
+    icon: <FaChartLine className="text-deepblue text-3xl" />,
+    title: "Market Linked Debentures",
+    description:
+      "Structured products with returns linked to market indices, designed for sophisticated investors seeking enhanced outcomes.",
+  },
+  {
+    icon: <FaBuilding className="text-deepblue text-3xl" />,
+    title: "Corporate Fixed Deposits",
+    description:
+      "Carefully selected corporate FDs offering stable returns, issuer strength, and capital preservation.",
+  },
+];
+
+/* ================= ANIMATION ================= */
+
 const fadeUpVariant = {
-  hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
+
+/* ================= COMPONENT ================= */
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-16 px-6 md:px-16 lg:px-24 overflow-hidden">
-      {/* Heading Section */}
+    <section className="w-full py-20 px-2 md:px-12 lg:px-20">
+      {/* ===== Heading ===== */}
       <motion.div
-        className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 max-w-6xl mx-auto"
+        className="max-w-7xl mx-auto mb-16"
+        variants={fadeUpVariant}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
-        variants={fadeUpVariant}
+        viewport={{ once: true }}
       >
-        {/* Left Content */}
-        <div>
-          <button className="bg-white border border-deepblue text-gray-800 text-sm font-medium px-7 py-2 rounded-full shadow-sm hover:shadow-md transition">
-            Our Services
-          </button>
+        <button className="border border-deepblue px-6 py-2 rounded-full text-sm mb-6">
+          Our Services
+        </button>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-8 leading-tight">
-            Financial Services <br />
-            <span className="text-deepblue font-playfair italic">
-              Designed for Impact
-            </span>
-          </h2>
-        </div>
-
-        {/* Right Button */}
-        <div className="mt-6 md:mt-0">
-          <button className="flex items-center justify-center bg-deepblue text-white font-medium px-6 py-4 rounded-full text-sm transition">
-            View all Services
-            <FiArrowUpRight className="ml-2 text-lg" />
-          </button>
-        </div>
+        <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+          Financial Services <br />
+          <span className="text-deepblue font-playfair">
+            Designed for Impact
+          </span>
+        </h2>
       </motion.div>
 
-
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mt-16">
+      {/* ===== Main Services ===== */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="border border-deepblue bg-white hover:bg-lightblue hover:border-lightblue rounded-2xl p-8 text-center md:text-left hover:shadow-[0_0_20px_4px_rgba(29,78,216,0.15)] 
-             transition-all duration-300 ease-out"
             variants={fadeUpVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
+            className="border border-deepblue/10 rounded-2xl p-10 bg-white hover:bg-lightblue transition-all duration-300"
           >
             {service.icon}
-            <h3 className="font-semibold text-xl mb-2">
+            <h3 className="text-xl font-semibold mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-base leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               {service.description}
             </p>
           </motion.div>
         ))}
       </div>
+
+      {/* ===== Fixed Income Section ===== */}
+      <motion.div
+        className="bg-white max-w-7xl mx-auto mt-8 border border-deepblue/10 rounded-2xl p-12 hover:bg-lightblue transition-all duration-300"
+        variants={fadeUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {/* Header */}
+        <div className="mb-12">
+          <FaUniversity className="text-deepblue text-4xl mb-4" />
+          <h3 className="text-xl md:text-xl font-semibold">
+            Fixed Income Instruments
+          </h3>
+          
+        </div>
+
+        {/* ===== Sub-services layout (Image-based UI) ===== */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+          {fixedIncome.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeUpVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="flex flex-col gap-4"
+            >
+
+              <h4 className="font-semibold text-xl">
+                {item.title}
+              </h4>
+
+              {/* Underline */}
+              <div className="h-[2px] w-56 bg-deepblue" />
+
+              <p className="text-gray-600 text-lg leading-relaxed">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

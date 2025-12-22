@@ -51,9 +51,9 @@ const AboutSection = () => {
   return (
     <section
       ref={ref}
-      className="w-full lg:ml-14 mx-auto py-20 px-6 md:px-16 lg:px-24 overflow-hidden mt-10"
+      className="mx-auto my-32"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 max-w-7xl mx-auto items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 max-w-8xl mx-auto items-center">
         {/* 🖼️ Left Side Image */}
         <motion.div
           className="flex justify-center lg:justify-end"
@@ -66,7 +66,7 @@ const AboutSection = () => {
             <img
               src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=800&q=80"
               alt="Financial Consultation"
-              className="rounded-3xl w-full object-cover lg:h-[500px] md:h-[480px] h-[400px]"
+              className="rounded-3xl w-full object-cover lg:h-[660px] md:h-[490px] h-[410px]"
             />
           </div>
         </motion.div>
@@ -79,7 +79,7 @@ const AboutSection = () => {
           variants={fadeUpVariant}
           className="flex flex-col justify-center h-full"
         >
-          <button className="mb-6 border border-deepblue px-5 py-1.5 rounded-full text-sm font-normal hover:shadow transition w-fit">
+          <button className="mb-4 border border-deepblue px-5 py-1.5 rounded-full text-sm font-normal hover:shadow transition w-fit">
             About Us
           </button>
 
@@ -90,11 +90,16 @@ const AboutSection = () => {
             </span>
           </h2>
 
-          <p className="text-gray-600 font-medium mt-4 text-md md:text-base leading-relaxed max-w-lg">
+          <p className="text-gray-600 font-medium mt-4 text-md md:text-base leading-relaxed max-w-xl">
             Established in 2024, Ennea Financial Services, our name is inspired by the Greek word 'Ennea,' meaning nine, a number symbolizing completeness, harmony, and spiritual awakening.
           </p>
-          <p className="text-gray-600 mt-4 text-md md:text-base leading-relaxed max-w-lg">
-            We embody these principles, striving for wholeness in our approach to wealth management. With a deep understanding of the complexities of financial markets, our multifaceted team brings wisdom, integrity, and expertise to help clients achieve their financial goals.We build lasting relationships on trust, delivering tailored investment solutions that align with our clients' goals for wealth creation, financial freedom, and legacy building.
+          <p className="text-gray-600 mt-4 text-md md:text-base leading-relaxed max-w-xl">
+            We embody these principles, striving for wholeness in our approach to wealth management and fostering long term relationship built on trust. Our bespoke investment solutions are designed to help clients achieve their unique goals, whether that's building wealth, securing financial freedom, or creating a lasting legacy. Our open-architecture platform allows us to curate the best investment opportunities based on individual risk profiles and investment horizons.          </p>
+          <p className="text-gray-600 mt-4 text-md md:text-base leading-relaxed max-w-xl">
+            With a deep understanding of the complexities of financial markets, our multifaceted team brings wisdom, integrity, and expertise to help clients achieve their financial goals. Our team boasts over 40 years of combined financial experience. We adhere to global best practices in wealth management, offering tailored advice that balances global perspectives with Indian market insights.
+          </p>
+          <p className="text-gray-600 mt-4 text-md md:text-base leading-relaxed max-w-xl">
+            Our open-architecture platform allows us to curate the best investment opportunities based on individual risk profiles and investment horizons
           </p>
 
 

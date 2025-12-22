@@ -65,11 +65,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="w-full py-28 px-6 md:px-16 lg:px-24 overflow-hidden bg-lightblue">
+    <section className="w-full py-28 px-6 md:px-16 lg:px-24 overflow-hidden">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Left Side: Contact Form */}
         <motion.div
-          className="bg-white rounded-2xl p-8 py-16"
+          className="bg-white rounded-2xl p-8 py-16 border border-deepblue/10 shadow-sm"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -178,7 +178,7 @@ const ContactSection = () => {
             confident financial decisions through expert consultation.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
             <div className="flex items-start gap-3">
               <FaMapMarkerAlt className="text-deepblue text-2xl mt-1" />
               <div>
@@ -224,7 +224,7 @@ const ContactSection = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

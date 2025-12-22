@@ -69,7 +69,7 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8F7FF] via-white to-[#F8F7FF] py-24 px-8 md:px-16 lg:px-28 pt-52">
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#F8F7FF] via-white to-[#F8F7FF] py-24 px-8 md:px-16 lg:px-28">
       {/* 💠 Glowing Gradient Accent */}
       <div className="absolute top-10 right-10 w-80 h-80 bg-deepblue/10 blur-3xl rounded-full"></div>
 

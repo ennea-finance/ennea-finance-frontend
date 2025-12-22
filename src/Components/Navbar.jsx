@@ -71,7 +71,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`bg-white px-4 md:px-24 py-4 md:py-5 flex justify-between items-center fixed w-full z-50 transition-shadow duration-300 ${
+      className={`bg-white px-4 md:px-24 py-4 md:py-5 flex justify-between items-center w-full z-50 transition-shadow duration-300 ${
         scrolled ? "shadow-deep" : "shadow-deep"
       }`}
     >
