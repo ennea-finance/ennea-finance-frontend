@@ -84,7 +84,7 @@ const fadeUpVariant = {
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-20 px-2 md:px-12 lg:px-20">
+    <section className="w-full py-20 px-7 md:px-12 lg:px-20">
       {/* ===== Heading ===== */}
       <motion.div
         className="max-w-7xl mx-auto mb-16"
@@ -97,7 +97,7 @@ const ServicesSection = () => {
           Our Services
         </button>
 
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
           Financial Services <br />
           <span className="text-deepblue font-playfair">
             Designed for Impact
@@ -115,13 +115,13 @@ const ServicesSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="border border-deepblue/10 rounded-2xl p-10 bg-white hover:bg-lightblue transition-all duration-300"
+            className="border border-deepblue/10 rounded-2xl py-10 px-7 bg-white hover:bg-lightblue transition-all duration-300"
           >
             {service.icon}
             <h3 className="text-xl font-semibold mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-md leading-relaxed">
               {service.description}
             </p>
           </motion.div>
@@ -130,7 +130,7 @@ const ServicesSection = () => {
 
       {/* ===== Fixed Income Section ===== */}
       <motion.div
-        className="bg-white max-w-7xl mx-auto mt-8 border border-deepblue/10 rounded-2xl p-12 hover:bg-lightblue transition-all duration-300"
+        className="bg-white max-w-7xl mx-auto mt-8 border border-deepblue/10 rounded-2xl px-7 py-10 hover:bg-lightblue transition-all duration-300"
         variants={fadeUpVariant}
         initial="hidden"
         whileInView="visible"
@@ -142,7 +142,7 @@ const ServicesSection = () => {
           <h3 className="text-xl md:text-xl font-semibold">
             Fixed Income Instruments
           </h3>
-          
+
         </div>
 
         {/* ===== Sub-services layout (Image-based UI) ===== */}
@@ -158,14 +158,14 @@ const ServicesSection = () => {
               className="flex flex-col gap-4"
             >
 
-              <h4 className="font-semibold text-xl">
+              <h4 className="font-semibold text-lg">
                 {item.title}
               </h4>
 
               {/* Underline */}
               <div className="h-[2px] w-56 bg-deepblue" />
 
-              <p className="text-gray-600 text-lg leading-relaxed">
+              <p className="text-gray-600 text-md leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
