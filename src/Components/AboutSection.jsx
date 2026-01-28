@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FaCircle } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
 const AboutSection = () => {
-  const [clients, setClients] = useState(0);
-  const [consultations, setConsultations] = useState(0);
-  const [experience, setExperience] = useState(0);
+  // const [clients, setClients] = useState(0);
+  // const [consultations, setConsultations] = useState(0);
+  // const [experience, setExperience] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const { ref, inView } = useInView({

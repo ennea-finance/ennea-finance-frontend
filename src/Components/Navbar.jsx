@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { GoArrowUpRight } from "react-icons/go";
-import logo from "../images/logo.png";
+//import logo from "../images/logo.png";
 import logo2 from "../images/logo2.png";
 import { scroller } from "react-scroll";
 
@@ -10,9 +10,9 @@ const Navbar = () => {
   const [loginOpen, setLoginOpen] = useState(false);
   const [submenu, setSubmenu] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileLoginOpen, setMobileLoginOpen] = useState(false);
-  const [investorOpen, setInvestorOpen] = useState(false);
-  const [employeeOpen, setEmployeeOpen] = useState(false);
+  // const [mobileLoginOpen, setMobileLoginOpen] = useState(false);
+  // const [investorOpen, setInvestorOpen] = useState(false);
+  // const [employeeOpen, setEmployeeOpen] = useState(false);
 
   // 🔹 EXISTING scroll visibility logic
   const [showNavbar, setShowNavbar] = useState(true);

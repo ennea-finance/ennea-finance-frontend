@@ -4,9 +4,6 @@ import { Link } from "react-router-dom";
 import {
   FiUsers,
   FiBriefcase,
-  FiMessageSquare,
-  FiFileText,
-  FiHelpCircle,
   FiMenu,
   FiLogOut,
 } from "react-icons/fi";

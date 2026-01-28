@@ -1,7 +1,7 @@
 import React from "react";
 import phoneMockup from "../images/app.png"; // <-- mobile image
 import app_bg from "../images/footer-bg.png";
-import { BsGooglePlay } from "react-icons/bs";
+//import { BsGooglePlay } from "react-icons/bs";
 import googlePlay from "../images/apple-store.png";
 import appStore from "../images/google-play.png";
 

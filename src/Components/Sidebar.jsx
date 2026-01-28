@@ -4,9 +4,6 @@ import { NavLink } from "react-router-dom";
 import {
   FiUsers,
   FiBriefcase,
-  FiMessageSquare,
-  FiFileText,
-  FiHelpCircle,
   FiLogOut,
 } from "react-icons/fi";
 import logo2 from "../images/logo2.png";

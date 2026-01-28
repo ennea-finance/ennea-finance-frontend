@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaChartPie } from "react-icons/fa";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import blog_bg from "../images/blog-bg.png";
+//import blog_bg from "../images/blog-bg.png";
 import philosopy_bg from "../images/philosopy-bg.png";
 
 /* ------------------ DATA (UNCHANGED) ------------------ */
