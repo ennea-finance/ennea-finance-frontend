@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-toastify"; // for notifications
 import "react-toastify/dist/ReactToastify.css";
-import { FiArrowRight, FiArrowRightCircle, FiLoader } from "react-icons/fi";
+import { FiArrowRight, FiLoader } from "react-icons/fi";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 25 },

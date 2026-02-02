@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import blog1 from "../images/blog1.jpg"
+// import blog1 from "../images/blog1.jpg"
 import axios from "axios";
 import { toast } from "react-toastify";
 import Footer from "../Components/Footer"

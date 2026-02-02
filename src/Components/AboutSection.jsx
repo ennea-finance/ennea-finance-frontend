@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const AboutSection = () => {
-  const [clients, setClients] = useState(0);
-  const [consultations, setConsultations] = useState(0);
-  const [experience, setExperience] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const { ref, inView } = useInView({
@@ -17,22 +14,22 @@ const AboutSection = () => {
     if (inView && !hasAnimated) {
       setHasAnimated(true);
 
-      const animateValue = (setter, end, duration) => {
-        let start = 0;
-        const increment = end / (duration / 16);
-        const timer = setInterval(() => {
-          start += increment;
-          if (start >= end) {
-            start = end;
-            clearInterval(timer);
-          }
-          setter(Math.floor(start));
-        }, 16);
-      };
+      // const animateValue = (setter, end, duration) => {
+      //   let start = 0;
+      //   const increment = end / (duration / 16);
+      //   const timer = setInterval(() => {
+      //     start += increment;
+      //     if (start >= end) {
+      //       start = end;
+      //       clearInterval(timer);
+      //     }
+      //     setter(Math.floor(start));
+      //   }, 16);
+      // };
 
-      animateValue(setClients, 500, 1200);
-      animateValue(setConsultations, 1000, 1200);
-      animateValue(setExperience, 7, 1000);
+      // animateValue(setClients, 500, 1200);
+      // animateValue(setConsultations, 1000, 1200);
+      // animateValue(setExperience, 7, 1000);
     }
   }, [inView, hasAnimated]);
 
