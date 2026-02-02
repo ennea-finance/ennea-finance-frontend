@@ -127,11 +127,11 @@ const AdminLogin = () => {
                         </div>
 
                         {/* Forgot Password */}
-                        <div className="flex justify-end text-sm">
+                        {/* <div className="flex justify-end text-sm">
                             <a href="#" className="text-deepblue hover:underline font-medium">
                                 Forgot Password?
                             </a>
-                        </div>
+                        </div> */}
 
                         {/* Login Button */}
                         <button
