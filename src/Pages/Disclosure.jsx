@@ -1,7 +1,8 @@
 import React from "react";
-import commissionTable from "../images/disclosure.png";
+// import commissionTable from "../images/disclosure.png";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import CommissionTable from "../Components/CommissionTable";
 
 const Disclosure = () => {
     return (
@@ -36,12 +37,13 @@ const Disclosure = () => {
                     </p>
                 </div>
                 {/* Commission Table Image */}
-                <div className="flex-shrink-0 w-full md:w-2/5">
-                    <img
+                <div className="flex-shrink-0 w-full md:w-3/6">
+                    {/* <img
                         src={commissionTable}
                         alt="Commission Table"
                         className="w-full rounded-lg shadow-md border border-gray-200"
-                    />
+                    /> */}
+                    <CommissionTable />
                 </div>
             </div>
 
