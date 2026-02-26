@@ -75,11 +75,11 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
         >
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+          <h3 className="font-satoshi text-2xl font-semibold mb-6">
             Schedule A Free Consultation
           </h3>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5 font-satoshi">
             {/* First & Last Name */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
@@ -89,7 +89,7 @@ const ContactSection = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-sm w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
               />
               <input
                 name="lastName"
@@ -98,7 +98,7 @@ const ContactSection = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-sm w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
               />
             </div>
 
@@ -111,7 +111,7 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-sm w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
               />
               <input
                 name="phone"
@@ -120,7 +120,7 @@ const ContactSection = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-sm w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
               />
             </div>
 
@@ -132,24 +132,24 @@ const ContactSection = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="border border-gray-200 rounded-md px-4 py-2 text-sm w-full focus:ring-2 focus:ring-blue-600 focus:outline-none resize-none"
+              className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none resize-none"
             ></textarea>
 
             {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full mt-2 bg-gradient-to-r from-deepblue to-blue-900 text-white font-medium py-3 rounded-full flex items-center justify-center gap-2 transition-all ${isSubmitting ? "opacity-80 cursor-not-allowed" : "hover:opacity-90"
+              className={`font-satoshi text-lg  w-full mt-2 bg-deepblue text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-all ${isSubmitting ? "opacity-80 cursor-not-allowed" : "hover:opacity-90"
                 }`}
             >
               {isSubmitting ? (
                 <>
-                  <FiLoader className="animate-spin text-lg" />
+                  <FiLoader className="animate-spin text-xl" />
                   Processing...
                 </>
               ) : (
                 <>
-                  Submit <FiArrowRight className="text-lg" />
+                  Submit <FiArrowRight className="text-xl" />
                 </>
               )}
             </button>
@@ -165,15 +165,15 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
         >
-          <button className="border border-deepblue px-6 py-2 rounded-full text-sm font-medium">
+          <button className="font-satoshi border border-deepblue px-6 py-2 rounded-full text-lg font-medium">
             Contact Us
           </button>
 
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+          <h2 className="font-satoshi text-3xl md:text-5xl font-bold">
             Get In Touch{" "}
-            <span className="text-deepblue italic font-playfair">With Us</span>
+            <span className="text-deepblue">With Us</span>
           </h2>
-          <p className="text-sm md:text-base max-w-md">
+          <p className="font-satoshi text-sm md:text-xl max-w-md">
             At Ennea Financial Services, we help individuals and businesses make
             confident financial decisions through expert consultation.
           </p>

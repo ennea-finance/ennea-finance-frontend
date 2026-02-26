@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],
         playfair: ['Playfair Display', 'serif'],
+        satoshi: ['Satoshi', 'sans-serif'],
       },
       colors: {
         deepblue: '#15009E',

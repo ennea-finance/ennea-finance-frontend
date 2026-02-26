@@ -80,7 +80,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-50
+      className={`font-satoshi fixed z-50
       bg-white px-4 md:px-24 py-2 md:py-3
       flex justify-between items-center
       transition-all duration-500 ease-in-out
@@ -96,7 +96,7 @@ const Navbar = () => {
       </div>
 
       {/* ---------- Desktop Navigation (UNCHANGED) ---------- */}
-      <ul className="hidden md:flex space-x-9 font-semibold text-lg">
+      <ul className="hidden md:flex space-x-9 font-bold text-lg">
         <li>
           <button onClick={() => scrollOrNavigateTo("home")} className="text-deepblue">
             Home
@@ -142,13 +142,13 @@ const Navbar = () => {
       <div className="hidden md:block relative" ref={dropdownRef}>
         <button
           onClick={handleLoginClick}
-          className="bg-deepblue text-white px-8 py-2 rounded-full hover:bg-deepblue transition"
+          className="font-satoshi font-bold text-lg bg-deepblue text-white px-8 py-2 rounded-full hover:bg-deepblue transition"
         >
           Login
         </button>
 
         {loginOpen && (
-          <div className="absolute right-0 mt-11 w-64 bg-white shadow-xl rounded-lg p-6 z-50">
+          <div className="font-satoshi absolute right-0 mt-11 w-64 bg-white shadow-xl rounded-lg p-6 z-50">
             <div
               onClick={() => setSubmenu("investor")}
               className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold cursor-pointer"
@@ -162,13 +162,12 @@ const Navbar = () => {
             >
               Employee Login <GoArrowUpRight />
             </div>
-            <hr className="my-2 border-gray-300" />
-            <Link
+            {/* <Link
               to="/admin/login"
               className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold"
             >
               Admin Login <GoArrowUpRight />
-            </Link>
+            </Link> */}
           </div>
         )}
 
@@ -194,6 +193,14 @@ const Navbar = () => {
                 <hr className="my-2 border-gray-300" />
                 <Link to="https://www.mfuonline.com/" className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold">
                   MF Utilities <GoArrowUpRight />
+                </Link>
+                <hr className="my-2 border-gray-300" />
+                <Link to="https://edge360.camsonline.com/signin" className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold">
+                  Cams  <GoArrowUpRight />
+                </Link>
+                <hr className="my-2 border-gray-300" />
+                <Link to="https://partners.nuvamawealth.com/FPD/Login.aspx" className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold">
+                  Nuvama Wealth <GoArrowUpRight />
                 </Link>
               </>
             )}

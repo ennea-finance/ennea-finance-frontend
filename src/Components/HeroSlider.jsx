@@ -3,7 +3,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 import { scroller } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 
-import HeroBg from "../images/landing2.webp";
+// ✅ NEW IMAGE
+import HeroBg from "../images/landing-bg.jpg";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -24,24 +25,25 @@ const Hero = () => {
 
   return (
     <section className="relative w-screen h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* 🔹 Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${HeroBg})` }}
       />
 
-      {/* Soft focus zone */}
-      <div className="absolute inset-y-0 left-0 w-[55%]
-        bg-gradient-to-r
+      g{/* 🔹 Soft Focus Zone (RIGHT SIDE) */}
+      {/* <div
+        className="absolute inset-y-0 right-0 w-[40%]
+        b-gradient-to-l
         from-[#0A1E3C]/70
         via-[#0A1E3C]/45
         to-transparent
         backdrop-blur-sm"
-      />
+      /> */}
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center px-8 md:px-16 lg:px-28">
-        <div className="max-w-xl text-white ml-28 mt-28">
+      {/* 🔹 Content */}
+      <div className="relative z-10 h-full flex items-center justify-end px-8">
+        <div className="max-w-2xl text-white mt-28 text-left px-10">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Your Trusted Partners in Generational Wealth
           </h1>
@@ -51,7 +53,7 @@ const Hero = () => {
             ambitious financial goals.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-10 flex justify-start">
             <button
               onClick={() => scrollOrNavigateTo("contact")}
               className="flex items-center gap-2 bg-deepblue text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300"

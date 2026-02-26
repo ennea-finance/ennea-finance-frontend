@@ -44,25 +44,25 @@ const services = [
 
 const fixedIncome = [
   {
-    icon: <FaLandmark className="text-deepblue text-3xl" />,
+    icon: <FaLandmark className="text-deepblue text-4xl" />,
     title: "Corporate Bonds",
     description:
       "High-quality corporate debt instruments offering predictable income with defined maturities and strong credit profiles.",
   },
   {
-    icon: <FaFileInvoiceDollar className="text-deepblue text-3xl" />,
+    icon: <FaFileInvoiceDollar className="text-deepblue text-4xl" />,
     title: "Non-Convertible Debentures",
     description:
       "Fixed or floating return instruments providing higher yields than traditional deposits within a defined risk framework.",
   },
   {
-    icon: <FaChartLine className="text-deepblue text-3xl" />,
+    icon: <FaChartLine className="text-deepblue text-4xl" />,
     title: "Market Linked Debentures",
     description:
       "Structured products with returns linked to market indices, designed for sophisticated investors seeking enhanced outcomes.",
   },
   {
-    icon: <FaBuilding className="text-deepblue text-3xl" />,
+    icon: <FaBuilding className="text-deepblue text-4xl" />,
     title: "Corporate Fixed Deposits",
     description:
       "Carefully selected corporate FDs offering stable returns, issuer strength, and capital preservation.",
@@ -84,29 +84,29 @@ const fadeUpVariant = {
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-20 px-7 md:px-12 lg:px-20">
+    <section className="py-20 px-7 md:px-12 lg:px-20 mx-20 my-16 font-satoshi">
       {/* ===== Heading ===== */}
       <motion.div
-        className="max-w-7xl mx-auto mb-16"
+        className="max-w-full mx-auto mb-16"
         variants={fadeUpVariant}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <button className="border border-deepblue px-6 py-2 rounded-full text-sm mb-6">
+        <button className="border border-deepblue px-6 py-2 rounded-full text-xl mb-6 font-medium">
           Our Services
         </button>
 
-        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+        <h2 className="text-4xl md:text-6xl font-bold leading-tight">
           Financial Services <br />
-          <span className="text-deepblue font-playfair">
+          <span className="text-deepblue">
             Designed for Impact
           </span>
         </h2>
       </motion.div>
 
       {/* ===== Main Services ===== */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-full mx-auto">
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -115,13 +115,13 @@ const ServicesSection = () => {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="border border-deepblue/10 rounded-2xl py-10 px-7 bg-white hover:bg-lightblue transition-all duration-300"
+            className="border border-deepblue/10 rounded-2xl py-10 px-10 bg-white hover:bg-lightblue transition-all duration-300"
           >
-            {service.icon}
-            <h3 className="text-xl font-semibold mb-3">
+            <div className="">{service.icon}</div>
+            <h3 className="text-3xl font-semibold mb-3">
               {service.title}
             </h3>
-            <p className="text-gray-600 text-md leading-relaxed">
+            <p className="text-gray-600 text-xl leading-relaxed text-justify font-normal">
               {service.description}
             </p>
           </motion.div>
@@ -130,7 +130,7 @@ const ServicesSection = () => {
 
       {/* ===== Fixed Income Section ===== */}
       <motion.div
-        className="bg-white max-w-7xl mx-auto mt-8 border border-deepblue/10 rounded-2xl px-7 py-10 hover:bg-lightblue transition-all duration-300"
+        className="bg-white max-w-full mx-auto mt-8 border border-deepblue/10 rounded-2xl px-10 py-10 hover:bg-lightblue transition-all duration-300"
         variants={fadeUpVariant}
         initial="hidden"
         whileInView="visible"
@@ -139,14 +139,14 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="mb-12">
           <FaUniversity className="text-deepblue text-4xl mb-4" />
-          <h3 className="text-xl md:text-xl font-semibold">
+          <h3 className="text-2xl md:text-3xl font-semibold">
             Fixed Income Instruments
           </h3>
 
         </div>
 
         {/* ===== Sub-services layout (Image-based UI) ===== */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mt-14">
           {fixedIncome.map((item, index) => (
             <motion.div
               key={index}
@@ -157,17 +157,27 @@ const ServicesSection = () => {
               transition={{ delay: index * 0.1 }}
               className="flex flex-col gap-4"
             >
+              <div className="flex flex-col">
+                {/* Title + underline block */}
+                <div className="flex flex-col justify-start">
+                  <div className="min-h-[70px]">
+                    <h4 className="font-semibold text-2xl leading-snug">
+                    {item.title}
+                  </h4>
+                  </div>
 
-              <h4 className="font-semibold text-lg">
-                {item.title}
-              </h4>
+                  {/* Underline – SAME LEVEL FOR ALL */}
+                  <div className="mt-2 h-[3px] w-72 bg-deepblue" />
+                </div>
 
-              {/* Underline */}
-              <div className="h-[2px] w-56 bg-deepblue" />
+                {/* Description */}
+                <p className="mt-6 text-gray-600 text-xl leading-relaxed text-justify">
+                  {item.description}
+                </p>
+              </div>
 
-              <p className="text-gray-600 text-md leading-relaxed">
-                {item.description}
-              </p>
+
+
             </motion.div>
           ))}
         </div>

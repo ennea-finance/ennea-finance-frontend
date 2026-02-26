@@ -1,24 +1,27 @@
 import React from "react";
 import phoneMockup from "../images/app.png"; // <-- mobile image
-import app_bg from "../images/footer-bg.png";
+// import app_bg from "../images/footer-bg.png";
 //import { BsGooglePlay } from "react-icons/bs";
 import googlePlay from "../images/apple-store.png";
 import appStore from "../images/google-play.png";
 
 const AppAccessSection = () => {
   return (
-    <section className="bg-black w-full pb-6 px-7 md:px-32 py-16" style={{
-      backgroundImage: `url(${app_bg})`,
-    }}>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center lg:gap-52 gap-10 ">
+    <section className="bg-black w-full px-7 md:px-32 py-32" style={{
+                backgroundImage: "url('/images/philosopy-bg.svg')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+            }}>
+      <div className=" max-w-8xl mx-auto flex flex-col md:flex-row items-center justify-center lg:gap-52 gap-10 ">
 
         {/* LEFT CONTENT */}
         <div className="max-w-2xl text-white">
-          <h2 className="text-3xl md:text-6xl font-semibold leading-tight mb-6">
+          <h2 className="font-satoshi text-3xl md:text-6xl font-semibold leading-tight mb-6">
             Access your portfolio <br /> anytime, anywhere.
           </h2>
 
-          <p className="text-white text-lg md:text-xl font-medium  mb-6 md:mb-10">
+          <p className="font-satoshi text-white text-lg md:text-xl font-medium  mb-6 md:mb-10">
             Download The My Planner - Finance Solved App Today
           </p>
 
@@ -53,11 +56,11 @@ const AppAccessSection = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="relative">
+        <div className="flex justify-center items-center">
           <img
             src={phoneMockup}
             alt="App preview"
-            className="w-[280px] md:w-[300px] bottom-0"
+            className="w-[280px] md:w-[300px] bottom-0 "
           />
         </div>
 

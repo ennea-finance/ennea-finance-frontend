@@ -40,7 +40,7 @@ const Home = () => {
 
       {/* REST OF CONTENT — offset for fixed navbar */}
       <div
-        className="pt-24"
+        className=""
         style={{
           backgroundImage: `url(${pattern})`,
           backgroundRepeat: "repeat",
