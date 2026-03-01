@@ -14,10 +14,12 @@ import { ToastContainer } from 'react-toastify';
 // import ProtectedRoute from './Components/ProtectedRoute';
 // import BlogDetails from './Pages/BlogDetails';
 import Disclosure from './Pages/Disclosure';
+import ScrollToTop from './Components/ScrollToTop';
 
 function App() {
   return (
     <>
+     <ScrollToTop />
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path='/' element={<Home />} />

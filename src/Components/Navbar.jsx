@@ -3,7 +3,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { GoArrowUpRight } from "react-icons/go";
 //import logo from "../images/logo.png";
-import logo2 from "../images/logo2.png";
+import logo2 from "../images/logo-dummy.png";
 import { scroller } from "react-scroll";
 
 const Navbar = () => {
@@ -80,13 +80,13 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`font-satoshi fixed z-50
-      bg-white px-4 md:px-24 py-2 md:py-3
+      className={`font-satoshi fixed z-50 mx-12
+      bg-white/10 backdrop-blur-md px-4 md:px-24 py-2 md:py-3
       flex justify-between items-center
       transition-all duration-500 ease-in-out
       ${
         showNavbar
-          ? "top-4 inset-x-4 rounded-xl translate-y-0"
+          ? "top-4 inset-x-4 rounded-full translate-y-0"
           : "top-0 inset-x-0 rounded-none -translate-y-full"
       }`}
     >
@@ -103,12 +103,12 @@ const Navbar = () => {
           </button>
         </li>
         <li>
-          <button onClick={() => scrollOrNavigateTo("about")} className="text-gray-700 hover:text-deepblue">
+          <button onClick={() => scrollOrNavigateTo("about")} className="text-white hover:text-deepblue">
             About
           </button>
         </li>
         <li>
-          <button onClick={() => scrollOrNavigateTo("services")} className="text-gray-700 hover:text-deepblue">
+          <button onClick={() => scrollOrNavigateTo("services")} className="text-white hover:text-deepblue">
             Services
           </button>
         </li>
@@ -118,7 +118,7 @@ const Navbar = () => {
           </button>
         </li> */}
         <li>
-          <button onClick={() => scrollOrNavigateTo("contact")} className="text-gray-700 hover:text-deepblue">
+          <button onClick={() => scrollOrNavigateTo("contact")} className="text-white hover:text-deepblue">
             Contact
           </button>
         </li>
@@ -129,7 +129,7 @@ const Navbar = () => {
               `transition duration-200 ${
                 isActive
                   ? "text-deepblue font-semibold"
-                  : "text-gray-700 hover:text-deepblue"
+                  : "text-white hover:text-deepblue"
               }`
             }
           >

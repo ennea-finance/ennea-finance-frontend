@@ -51,7 +51,7 @@ const Footer = () => {
           </h4>
 
           {/* Social Icons */}
-          <div className="border border-black flex mb-6 lg:justify-start">
+          <div className="flex mb-6 lg:justify-start">
             {[FaInstagram, FaLinkedin, FaFacebook, FaTwitter].map(
               (Icon, idx) => (
                 <div

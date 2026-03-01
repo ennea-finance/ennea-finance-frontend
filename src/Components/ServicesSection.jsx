@@ -93,15 +93,12 @@ const ServicesSection = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <button className="border border-deepblue px-6 py-2 rounded-full text-xl mb-6 font-medium">
+        {/* <button className="border border-deepblue px-6 py-2 rounded-full text-xl mb-6 font-medium">
           Our Services
-        </button>
+        </button> */}
 
         <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-          Financial Services <br />
-          <span className="text-deepblue">
-            Designed for Impact
-          </span>
+          Our Services
         </h2>
       </motion.div>
 

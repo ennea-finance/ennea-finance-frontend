@@ -165,9 +165,9 @@ const ContactSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
         >
-          <button className="font-satoshi border border-deepblue px-6 py-2 rounded-full text-lg font-medium">
+          {/* <button className="font-satoshi border border-deepblue px-6 py-2 rounded-full text-lg font-medium">
             Contact Us
-          </button>
+          </button> */}
 
           <h2 className="font-satoshi text-3xl md:text-5xl font-bold">
             Get In Touch{" "}
