@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const AboutSection = () => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.3,
-  });
-
-  useEffect(() => {
-    if (inView && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [inView, hasAnimated]);
-
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 25 },
     visible: {
@@ -27,8 +13,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section ref={ref} className="mb-20 md:my-36 font-satoshi relative">
-      
+    <section className="mb-20 md:my-36 font-satoshi relative">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -36,15 +21,12 @@ const AboutSection = () => {
         variants={fadeUpVariant}
         className="max-w-full mx-40 text-left relative"
       >
-
-        {/* 🔹 Left Large Quote (Before Heading) */}
-        <FaQuoteLeft className=" text-6xl md:text-4xl mb-6 opacity-80" />
+        {/* Left Quote */}
+        <FaQuoteLeft className="text-6xl md:text-4xl mb-6 opacity-80 text-deepblue" />
 
         {/* Heading */}
         <h2 className="text-4xl md:text-6xl font-bold mt-4 leading-tight">
-          <span className="text-deepblue mt-6">
-            About Us
-          </span>
+          <span className="text-deepblue mt-6">About Us</span>
         </h2>
 
         {/* Content */}
@@ -75,11 +57,10 @@ const AboutSection = () => {
           opportunities based on individual risk profiles and investment horizons.
         </p>
 
-        {/* 🔹 Right Large Quote (After Content - Right Side) */}
+        {/* Right Quote */}
         <div className="flex justify-end mt-10">
-          <FaQuoteRight className="text-6xl md:text-4xl opacity-80" />
+          <FaQuoteRight className="text-6xl md:text-4xl opacity-80 text-deepblue" />
         </div>
-
       </motion.div>
     </section>
   );

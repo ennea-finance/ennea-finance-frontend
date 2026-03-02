@@ -97,7 +97,7 @@ const ServicesSection = () => {
           Our Services
         </button> */}
 
-        <h2 className="text-4xl md:text-6xl font-bold leading-tight">
+        <h2 className="text-4xl md:text-6xl font-bold leading-tight text-deepblue">
           Our Services
         </h2>
       </motion.div>
@@ -168,7 +168,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Description */}
-                <p className="mt-6 text-gray-600 text-xl leading-relaxed text-justify">
+                <p className="mt-6 text-gray-600 text-xl leading-relaxed text-left">
                   {item.description}
                 </p>
               </div>

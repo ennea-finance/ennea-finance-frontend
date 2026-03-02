@@ -13,6 +13,8 @@ import logo from "../images/logo2.png";
 import { scroller } from "react-scroll";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import { IoIosInformationCircle } from "react-icons/io";
+
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -37,7 +39,7 @@ const Footer = () => {
       {/* ================= MAIN GRID ================= */}
       <div
         className="
-          max-w-7xl mx-auto
+          max-w-8xl mx-auto px-20
           grid grid-cols-1
           md:grid-cols-2
           lg:grid-cols-[2.5fr_1.5fr_2.5fr_3.5fr]
@@ -56,7 +58,7 @@ const Footer = () => {
               (Icon, idx) => (
                 <div
                   key={idx}
-                  className="p-3 rounded-full bg-gray-100 hover:bg-deepblue hover:text-white transition cursor-pointer shadow-sm hover:shadow-md"
+                  className="p-3 rounded-full bg-gray-100 hover:text-deepblue transition cursor-pointer shadow-sm"
                 >
                   <Icon className="text-3xl" />
                 </div>
@@ -77,7 +79,7 @@ const Footer = () => {
         </div>
 
         {/* ================= COL 2 : COMPANY ================= */}
-        <div className="flex flex-col w-full items-center md:items-start text-center md:text-left">
+        <div className="flex flex-col pl-10 w-full items-center md:items-start text-center md:text-left">
           <h4 className="text-deepblue text-2xl font-bold mb-4">Company</h4>
 
           <ul className="space-y-2 text-gray-600 text-lg">
@@ -133,7 +135,7 @@ const Footer = () => {
             <div className="flex items-start gap-3 justify-center lg:justify-start">
               <FaLocationDot className="mt-1 text-deepblue text-xl flex-shrink-0" />
               <div>
-                <p>12, National Storage Building,</p>
+                <p>312, National Storage Building, Near Indian Oil Petrol Pump,</p>
                 <p>Senapati Bapat Marg, Mahim (W)</p>
                 <p>Mumbai, Maharashtra 400016</p>
               </div>
@@ -150,20 +152,45 @@ const Footer = () => {
               <MdEmail className="text-deepblue text-xl flex-shrink-0" />
               <p>service@enneafinancialservices.com</p>
             </div>
+
+            {/* Registration Info */}
+
+            <div className="flex items-start gap-3 justify-center lg:justify-start text-gray-800">
+              <IoIosInformationCircle className="mt-1 text-deepblue text-xl flex-shrink-0" />
+              <div>
+                <p><strong>AMFI Registration Number:</strong> 311501</p>
+                <p><strong>Registration Date:</strong> 17th October 2024</p>
+                <p><strong>Validity Till:</strong> 16th October 2027</p>
+              </div>
+            </div>
           </div>
 
-          {/* Registration Info */}
-          <div className="mt-6 text-lg text-gray-600 space-y-1 text-center lg:text-left">
-            <p><strong>AMFI Registration Number:</strong> 311501</p>
-            <p><strong>Registration Date:</strong> 17th October 2024</p>
-            <p><strong>Validity Till:</strong> 16th October 2027</p>
-          </div>
+
+
+
         </div>
       </div>
 
       {/* ================= BOTTOM BAR ================= */}
-      <div className="border-t border-lightblue pt-6 text-center text-sm md:text-base text-gray-600">
-        © {new Date().getFullYear()} Ennea Financial Services. All rights reserved.
+      <div className="border-t border-lightblue pt-6 text-center text-sm md:text-base text-gray-600 space-y-2">
+
+        <p>
+          © {new Date().getFullYear()} Ennea Financial Services. All rights reserved.
+        </p>
+
+        <p className="flex items-center justify-center gap-1 flex-wrap text-xs">
+          Design with ❤️
+          {/* <span className="text-red-500 text-lg">❤️</span> */}
+          by
+          <a
+            href="https://www.linkedin.com/in/vishal-borse-971241212/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+          Vishal Borse & Team
+          </a>
+        </p>
+
       </div>
     </footer>
   );

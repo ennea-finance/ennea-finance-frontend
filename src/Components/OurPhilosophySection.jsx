@@ -20,7 +20,7 @@ const steps = [
         label: "Client-Centric Approach",
         title: "Our clients are at the core of everything we do. We operate with complete autonomy, enabling us to deliver unbiased advice and objective recommendations that serve only one purpose — your best interest. Every strategy we design is guided by clarity and open communication, ensuring that you are fully informed and confident at every step of your financial journey. We take the time to understand your goals, risk appetite, and long-term vision, crafting solutions that are both strategic and adaptive to market dynamics. Through regular review, meticulous research, and disciplined execution, we help you navigate the complexities of wealth creation and preservation.",
         image: "/images/create.png",
-        icon: <TbUserStar className="text-deepblue md:text-4xl" />,
+        icon: <TbUserStar className="text-deepblue md:text-6xl font-bold" />,
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ const steps = [
         label: "Growth Through Value Creation ",
         title: "We provide high-quality, personalized service that meets your' evolving needs. We have an open architecture platform where we collaborate with leading industry experts to give you access to best-in-class products and services. We Stay up-to-date with market trends, research, and best practices to offer innovative solutions. We do not manufacture any products to ensure that we offer unbiased investment services. We Prioritize sustainable, long-term growth over short-term gains.",
         image: "/images/track.png",
-        icon: <PiChartLineUpBold className="text-deepblue md:text-4xl" />,
+        icon: <PiChartLineUpBold className="text-deepblue md:text-6xl font-bold" />,
     },
     {
         id: 3,
@@ -36,7 +36,7 @@ const steps = [
         label: "Client Empowerment ",
         title: "We empower clients with timely market insights and knowledge to inform their financial decisions. Through collaborative partnerships, we craft customized solutions that align with their unique goals. With a commitment to client success, we continually refine our approach to try deliver exceptional outcomes.",
         image: "/images/evaluate.png",
-        icon: <PiUserCircleCheck className="text-deepblue md:text-4xl" />,
+        icon: <PiUserCircleCheck className="text-deepblue md:text-6xl font-bold" />,
     },
     {
         id: 4,
@@ -44,7 +44,7 @@ const steps = [
         label: "Confidentiality ",
         title: "We develop a relationship with their clients based on trust, transparency and honesty that goes beyond the usual relationship and ensures a total alignment of interests.We make sure that the client information is only to those authorized to have access. A relationship of trust and confidence with our clients can only be built upon the understanding that their information will remain confidential.",
         image: "/images/update.png",
-        icon: <IoShieldCheckmarkOutline className="text-deepblue md:text-4xl" />,
+        icon: <IoShieldCheckmarkOutline className="text-deepblue md:text-6xl font-bold" />,
     },
 ];
 /* ------------------ RESPONSIVE HOOK ------------------ */
@@ -112,7 +112,7 @@ const OurPhilosophySection = () => {
             />
 
             {/* 🔹 Blended Gradient + Blur Overlay (SAME AS HERO) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 backdrop-blur-sm" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30 backdrop-blur-sm" />
 
             {/* 🔹 Content Wrapper */}
             <div className="relative z-10">
@@ -146,7 +146,7 @@ const OurPhilosophySection = () => {
                                 style={{ width: isMobile ? "100%" : "62vw" }}
                             >
                                 <div className="rounded-3xl lg:p-14 p-9 md:p-14 h-full flex flex-col gap-6 border border-white">
-                                    <div className="bg-white w-fit p-3 border rounded-xl border-deepblue">
+                                    <div className="w-fit bg-white p-3 rounded-lg">
                                         {step.icon}
                                     </div>
 

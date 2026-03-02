@@ -4,11 +4,12 @@ import phoneMockup from "../images/app.png"; // <-- mobile image
 //import { BsGooglePlay } from "react-icons/bs";
 import googlePlay from "../images/apple-store.png";
 import appStore from "../images/google-play.png";
+import appBg from "../images/app-demo.png";
 
 const AppAccessSection = () => {
   return (
-    <section className="bg-black w-full px-7 md:px-32 py-32" style={{
-                backgroundImage: "url('/images/philosopy-bg.svg')",
+    <section className="bg-black w-full px-7 md:px-32 py-24" style={{
+                backgroundImage: `url(${appBg})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
@@ -28,7 +29,7 @@ const AppAccessSection = () => {
           <div className="flex gap-2 md:gap-4 items-center">
             {/* Google Play */}
             <a
-              href="https://apps.apple.com/in/app/my-planner-finance-solved/id6446684872"
+              href="https://play.google.com/store/apps/details?id=com.ifa.now.app&hl=en&gl=US"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -41,9 +42,10 @@ const AppAccessSection = () => {
 
             {/* Apple App Store */}
             <a
-              href="https://play.google.com/store/apps/details?id=com.ifa.now.app&hl=en&gl=US"
+              href="https://apps.apple.com/in/app/my-planner-finance-solved/id6446684872"
               target="_blank"
               rel="noopener noreferrer"
+              
             >
               <img
                 src={appStore}

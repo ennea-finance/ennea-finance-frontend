@@ -76,7 +76,7 @@ const ContactSection = () => {
           variants={fadeUp}
         >
           <h3 className="font-satoshi text-2xl font-semibold mb-6">
-            Schedule A Free Consultation
+            Schedule a Free Consultation
           </h3>
 
           <form onSubmit={handleSubmit} className="space-y-5 font-satoshi">
@@ -169,9 +169,9 @@ const ContactSection = () => {
             Contact Us
           </button> */}
 
-          <h2 className="font-satoshi text-3xl md:text-5xl font-bold">
+          <h2 className="font-satoshi text-3xl md:text-5xl font-bold text-deepblue">
             Get In Touch{" "}
-            <span className="text-deepblue">With Us</span>
+            With Us
           </h2>
           <p className="font-satoshi text-sm md:text-xl max-w-md">
             At Ennea Financial Services, we help individuals and businesses make

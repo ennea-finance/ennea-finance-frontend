@@ -86,7 +86,7 @@ const Navbar = () => {
       transition-all duration-500 ease-in-out
       ${
         showNavbar
-          ? "top-4 inset-x-4 rounded-full translate-y-0"
+          ? "top-4 inset-x-4 rounded-lg translate-y-0"
           : "top-0 inset-x-0 rounded-none -translate-y-full"
       }`}
     >
@@ -139,29 +139,30 @@ const Navbar = () => {
       </ul>
 
       {/* ---------- Desktop Login Dropdown (UNCHANGED) ---------- */}
-      <div className="hidden md:block relative" ref={dropdownRef}>
+      <div className="hidden md:block" ref={dropdownRef}>
         <button
           onClick={handleLoginClick}
-          className="font-satoshi font-bold text-lg bg-deepblue text-white px-8 py-2 rounded-full hover:bg-deepblue transition"
+          className="font-satoshi font-bold text-lg bg-deepblue text-white px-8 py-2 rounded-lg hover:bg-deepblue transition"
         >
           Login
         </button>
 
         {loginOpen && (
-          <div className="font-satoshi absolute right-0 mt-11 w-64 bg-white shadow-xl rounded-lg p-6 z-50">
+          <div className="bg-white/10 backdrop-blur-xl font-satoshi absolute right-0 mt-11 w-64 rounded-lg p-6 z-50">
             <div
               onClick={() => setSubmenu("investor")}
-              className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold cursor-pointer"
+              className="text-white px-3 py-2 hover:text-deepblue flex justify-between font-semibold cursor-pointer"
             >
               Investor Login <GoArrowUpRight />
             </div>
             <hr className="my-2 border-gray-300" />
             <div
               onClick={() => setSubmenu("employee")}
-              className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold cursor-pointer"
+              className="text-white px-3 py-2 hover:text-deepblue flex justify-between font-semibold cursor-pointer"
             >
               Employee Login <GoArrowUpRight />
             </div>
+            
             {/* <Link
               to="/admin/login"
               className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold"
@@ -172,13 +173,13 @@ const Navbar = () => {
         )}
 
         {submenu && (
-          <div className="absolute right-64 mx-4 mt-11 w-64 bg-white shadow-xl rounded-lg p-6 z-50">
+          <div className="bg-white/20 backdrop-blur-3xl absolute right-0 top-60 mt-11 w-64 rounded-lg p-6 z-50 text-white">
             {submenu === "investor" && (
               <Link
                 to="https://invest.enneafinancialservices.com/"
                 className="px-3 py-2 hover:text-deepblue flex justify-between font-semibold"
               >
-                Portfolio <GoArrowUpRight />
+              Portfolio <GoArrowUpRight />
               </Link>
             )}
             {submenu === "employee" && (
