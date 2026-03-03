@@ -8,7 +8,7 @@ import HeroBg from "../images/landing-demo.jpg";
 
 const Hero = () => {
   const navigate = useNavigate();
-  const [slide, setSlide] = useState(false);
+  // const [slide, setSlide] = useState(false);
   const texts = [
     "Empowering smarter financial Decisions",
     "Building Long-Term Wealth Creation",
