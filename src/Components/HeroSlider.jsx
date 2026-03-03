@@ -47,7 +47,7 @@ const Hero = () => {
   // ✅ Fix: Small delay so animation is visible
   useEffect(() => {
     const timer = setTimeout(() => {
-      setSlide(true);
+      // setSlide(true);
     }, 150); // slight delay makes animation trigger properly
 
     return () => clearTimeout(timer);
