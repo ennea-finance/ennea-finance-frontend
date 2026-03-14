@@ -1,14 +1,39 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-//import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaEnvelope } from "react-icons/fa";
 import axios from "axios";
-import { toast } from "react-toastify"; // for notifications
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FiArrowRight, FiLoader } from "react-icons/fi";
 
+/* ================= ANIMATION ================= */
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 const fadeUp = {
-  hidden: { opacity: 0, y: 25 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 35 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
+const formAnimation = {
+  hidden: { opacity: 0, scale: 0.97, y: 40 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
 };
 
 const ContactSection = () => {
@@ -22,16 +47,20 @@ const ContactSection = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.email || !formData.firstName || !formData.message || !formData.phone || !formData.lastName) {
+    if (
+      !formData.email ||
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.phone ||
+      !formData.message
+    ) {
       toast.error("Please fill all required fields!");
       return;
     }
@@ -57,7 +86,6 @@ const ContactSection = () => {
         toast.error("Something went wrong, please try again.");
       }
     } catch (error) {
-      console.error(error);
       toast.error(error.response?.data?.message || "Error sending message!");
     } finally {
       setIsSubmitting(false);
@@ -65,22 +93,28 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="w-full py-28 px-6 md:px-16 lg:px-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Left Side: Contact Form */}
+    <section className="w-full py-20 sm:py-20 md:py-28 px-4 sm:px-8 md:px-16 lg:px-24 overflow-hidden">
+
+      <motion.div
+        className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 md:gap-12 items-center"
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+
+        {/* Contact Form */}
+
         <motion.div
-          className="bg-white rounded-2xl p-8 py-16 border border-deepblue/10 shadow-sm"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={fadeUp}
+          variants={formAnimation}
+          className="mx-2 order-2 lg:order-1 bg-white rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 border border-deepblue/10 shadow-sm"
         >
-          <h3 className="font-satoshi text-2xl font-semibold mb-6">
+          <h3 className="font-satoshi text-xl sm:text-2xl font-semibold mb-6">
             Schedule a Free Consultation
           </h3>
 
           <form onSubmit={handleSubmit} className="space-y-5 font-satoshi">
-            {/* First & Last Name */}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 name="firstName"
@@ -89,8 +123,9 @@ const ContactSection = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-deepblue focus:outline-none transition"
               />
+
               <input
                 name="lastName"
                 type="text"
@@ -98,11 +133,10 @@ const ContactSection = () => {
                 value={formData.lastName}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-deepblue focus:outline-none transition"
               />
             </div>
 
-            {/* Email & Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 name="email"
@@ -111,8 +145,9 @@ const ContactSection = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-deepblue focus:outline-none transition"
               />
+
               <input
                 name="phone"
                 type="text"
@@ -120,11 +155,10 @@ const ContactSection = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none"
+                className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-deepblue focus:outline-none transition"
               />
             </div>
 
-            {/* Message */}
             <textarea
               name="message"
               placeholder="Message Here..."
@@ -132,15 +166,17 @@ const ContactSection = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-blue-600 focus:outline-none resize-none"
-            ></textarea>
+              className="border border-gray-200 rounded-md px-4 py-2 text-base w-full focus:ring-2 focus:ring-deepblue focus:outline-none resize-none transition"
+            />
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`font-satoshi text-lg  w-full mt-2 bg-deepblue text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-all ${isSubmitting ? "opacity-80 cursor-not-allowed" : "hover:opacity-90"
-                }`}
+              className={`w-full mt-2 bg-deepblue text-white font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-all ${
+                isSubmitting
+                  ? "opacity-80 cursor-not-allowed"
+                  : "hover:opacity-90 hover:-translate-y-[2px]"
+              }`}
             >
               {isSubmitting ? (
                 <>
@@ -153,80 +189,29 @@ const ContactSection = () => {
                 </>
               )}
             </button>
+
           </form>
-
         </motion.div>
 
-        {/* Right Side: Contact Info */}
+        {/* Right Content */}
+
         <motion.div
-          className="space-y-6 ml-16"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
           variants={fadeUp}
+          className="order-1 lg:order-2 space-y-6 text-center lg:text-left lg:flex-col lg:justify-center"
         >
-          {/* <button className="font-satoshi border border-deepblue px-6 py-2 rounded-full text-lg font-medium">
-            Contact Us
-          </button> */}
-
-          <h2 className="font-satoshi text-3xl md:text-5xl font-bold text-deepblue">
-            Get In Touch{" "}
-            With Us
+          <h2 className="font-satoshi text-3xl sm:text-4xl md:text-5xl font-bold text-deepblue lg:text-center">
+            Get In Touch With Us
           </h2>
-          <p className="font-satoshi text-sm md:text-xl max-w-md">
-            At Ennea Financial Services, we help individuals and businesses make
-            confident financial decisions through expert consultation.
-          </p>
 
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
-            <div className="flex items-start gap-3">
-              <FaMapMarkerAlt className="text-deepblue text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold text-gray-900 text-base">
-                  Our Location
-                </h4>
-                <p className="text-gray-600 text-xs leading-relaxed">
-                  No. 9A, East Madison Street, Baltimore, MD, USA 4508
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <FaPhoneAlt className="text-deepblue text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold text-gray-900 text-base">
-                  Contact Us
-                </h4>
-                <p className="text-gray-600 text-xs leading-relaxed">
-                  +111 234 567 678 <br /> +222 234 567 078
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <FaClock className="text-deepblue text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold text-gray-900 text-base">
-                  Working Time
-                </h4>
-                <p className="text-gray-600 text-xs leading-relaxed">
-                  Mon to Sat: 8:00am - 4:00pm <br /> Sunday: Closed
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <FaEnvelope className="text-deepblue text-2xl mt-1" />
-              <div>
-                <h4 className="font-semibold text-gray-900 text-base">Email</h4>
-                <p className="text-gray-600 text-xs leading-relaxed">
-                  ennea@gmail.com <br /> info@ennea.com
-                </p>
-              </div>
-            </div>
-          </div> */}
+          <div className="px-4 lg:flex lg:justify-center">
+            <p className="font-satoshi text-base sm:text-lg md:text-xl lg:text-xl max-w-lg mx-auto lg:mx-0 lg:text-center">
+              At Ennea Financial Services, we help individuals and businesses
+              make confident financial decisions.
+            </p>
+          </div>
         </motion.div>
-      </div>
+
+      </motion.div>
     </section>
   );
 };

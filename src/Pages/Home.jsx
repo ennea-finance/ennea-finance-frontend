@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { Element, scroller } from "react-scroll";
 import { useLocation } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import Hero from "../Components/HeroSlider";
+import Landing from "../Components/Landing";
 import AboutSection from "../Components/AboutSection";
 import ServicesSection from "../Components/ServicesSection";
 import ContactSection from "../Components/ContactSection";
 import Footer from "../Components/Footer";
-import OurPhilosophySection from "../Components/OurPhilosophySection";
+import Philosophy from "../Components/Philosophy";
 import AppAccessSection from "../Components/AppAccessSection";
 
 import pattern from "../images/icons-bg.png";
@@ -35,7 +35,7 @@ const Home = () => {
 
       {/* HERO — full screen, navbar overlays */}
       <Element name="home">
-        <Hero />
+        <Landing />
       </Element>
 
       {/* REST OF CONTENT — offset for fixed navbar */}
@@ -52,7 +52,7 @@ const Home = () => {
           <AboutSection />
         </Element>
 
-        <OurPhilosophySection />
+        <Philosophy />
 
         <Element name="services">
           <ServicesSection />

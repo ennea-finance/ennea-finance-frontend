@@ -12,7 +12,8 @@ module.exports = {
       },
       colors: {
         deepblue: '#15009E',
-        lightblue: '#D9E4F6',// ← your custom color
+        lightblue: '#D9E4F6',
+        lightbeige:'#f8deb7'
       },
       boxShadow: {
         deep: '0 10px 50px rgba(21, 0, 158, 0.1)',
